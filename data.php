@@ -1,5 +1,8 @@
 <?php
+require_once("./connect.php");
 session_start();
+
+
 
 if (!isset($_SESSION['contacts'])) {
     $_SESSION['contacts'] = [];
@@ -14,14 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function afficherContact() {
+function afficherContact($conn) {
+    $data = $conn->query("SELECT * FROM user");
     if (isset($_SESSION['contacts']) && !empty($_SESSION['contacts'])) {
-        foreach ($_SESSION['contacts'] as $contact) {
+        foreach ($data as $row) {
             echo "<tr>";
-            echo "<td class='px-4 py-2 border'>" . $contact['name']. "</td>";
-            echo "<td class='px-4 py-2 border'>" . $contact['telephone'] . "</td>";
-            echo "<td class='px-4 py-2 border'>" . $contact['email'] . "</td>";
+            echo "<td class='px-4 py-2 border'>" . $row['name']. "</td>";
+            echo "<td class='px-4 py-2 border'>" . $row['telephone'] . "</td>";
+            echo "<td class='px-4 py-2 border'>" . $row['email'] . "</td>";
             echo "</tr>";
+            
         }
     } else {
         echo "<tr><td colspan='3' class='px-4 py-2 border text-center'>Aucun contact ajouté.</td></tr>";

@@ -13,7 +13,7 @@ require_once('data.php');
 
 <body>
     <?php require_once("./header.php") ?>
-   
+   <?php require_once("./connect.php") ?>
    <div class="w-full max-w-xs mx-auto">
       <form method="POST" action="data.php" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
@@ -35,7 +35,7 @@ require_once('data.php');
             <input name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Votre email">
         </div>
         <div class="flex items-center justify-between">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button type="submit" class="bg-gray-800 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Ajouter un Contact
             </button>
         </div>

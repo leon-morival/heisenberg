@@ -10,17 +10,19 @@
 <body>
     <?php require_once("./data.php") ?>
     <?php require_once("./header.php") ?>
-    <h2 class="text-xl text-center">Liste des Contacts</h2>
-   <table class="mx-auto table-auto border-collapse border border-gray-300 ">
-      <thead>
-        <tr>
+    <?php require_once("./connect.php") ?>
+
+   <table class="mx-auto table-auto  border border-gray-300 ">
+   <caption class="caption-top">Liste des contacts</caption>  
+   <thead>
+        <tr class="bg-gray-100">
           <th class="px-4 py-2 border">Nom</th>
           <th class="px-4 py-2 border">Téléphone</th>
           <th class="px-4 py-2 border">Email</th>
         </tr>
       </thead>
       <tbody>
-        <?php afficherContact(); ?>
+        <?php afficherContact($conn); ?>
       </tbody>
    </table>
 </body>
