@@ -19,6 +19,7 @@
           <th class="px-4 py-2 border">Nom</th>
           <th class="px-4 py-2 border">Téléphone</th>
           <th class="px-4 py-2 border">Email</th>
+          <th class="px-4 py-2 border">Delete</th>
         </tr>
       </thead>
       <tbody>

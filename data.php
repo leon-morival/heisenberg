@@ -1,7 +1,8 @@
 <?php
 require_once("./connect.php");
 
-
+// $id = $_GET['id'];
+// $delete = $conn->query("DELETE FROM user WHERE id='$id'");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,15 +14,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// function deleteRow($id, $conn){
+//     $conn->query("DELETE FROM `user` WHERE `id`= 1");
+// }
 
 function afficherContact($conn) {
     $data = $conn->query("SELECT * FROM user");
     if ( !empty($data)) {
         foreach ($data as $row) {
+
             echo "<tr>";
             echo "<td class='px-4 py-2 border'>" . $row['name']. "</td>";
             echo "<td class='px-4 py-2 border'>" . $row['telephone'] . "</td>";
             echo "<td class='px-4 py-2 border'>" . $row['email'] . "</td>";
+            echo "<td class='px-4 py-2 border'>";
+            echo "<form action='delete.php' method='POST'>";
+            echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
+            echo "<button type='submit' class='delete'>Delete</button>";
+            echo "</form>";
+            echo "</td>";
             echo "</tr>";
             
         }
