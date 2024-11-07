@@ -1,5 +1,5 @@
 <?php 
-require_once("connect.php");
+require_once("./includes/connect.php");
 
 $id = trim($_POST['id']);
 

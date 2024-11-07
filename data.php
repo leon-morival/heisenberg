@@ -1,8 +1,5 @@
 <?php
-require_once("./connect.php");
-
-// $id = $_GET['id'];
-// $delete = $conn->query("DELETE FROM user WHERE id='$id'");
+require_once("./includes/connect.php");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,10 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// function deleteRow($id, $conn){
-//     $conn->query("DELETE FROM `user` WHERE `id`= 1");
-// }
-
 function afficherContact($conn) {
     $data = $conn->query("SELECT * FROM user");
     if ( !empty($data)) {
@@ -27,10 +20,12 @@ function afficherContact($conn) {
             echo "<td class='px-4 py-2 border'>" . $row['name']. "</td>";
             echo "<td class='px-4 py-2 border'>" . $row['telephone'] . "</td>";
             echo "<td class='px-4 py-2 border'>" . $row['email'] . "</td>";
-            echo "<td class='px-4 py-2 border'>";
-            echo "<form action='delete.php' method='POST'>";
+            echo "<td class='px-4 py-2 border text-center'>";
+            echo "<form action='delete.php' method='POST' style='display:inline;'>";
             echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
-            echo "<button type='submit' class='delete'>Delete</button>";
+            echo "<button type='submit' title='Supprimer' onclick='return confirm(\"Voulez-vous vraiment supprimer ce contact ?\");' style='color:#C9112A;'>";
+            echo "<i class='fas fa-trash-alt'></i>";
+            echo "</button>";
             echo "</form>";
             echo "</td>";
             echo "</tr>";

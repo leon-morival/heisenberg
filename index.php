@@ -12,8 +12,8 @@ require_once('data.php');
 </head>
 
 <body>
-    <?php require_once("./header.php") ?>
-   <?php require_once("./connect.php") ?>
+    <?php require_once("./includes/header.php") ?>
+   <?php require_once("./includes/connect.php") ?>
    <div class="w-full max-w-xs mx-auto">
       <form method="POST" action="data.php" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
@@ -44,5 +44,5 @@ require_once('data.php');
 
   
 </body>
-<?php require_once("./footer.php")?>
+<?php require_once("./includes/footer.php")?>
 </html>
