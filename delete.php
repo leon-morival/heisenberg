@@ -1,21 +1,26 @@
-<?php 
+<?php
 require_once("./includes/connect.php");
 
-$id = trim($_POST['id']);
+if (isset($_POST['id'])) {
+    $id = trim($_POST['id']);
 
-if ($id != "") {
-    $delete = $conn->query("DELETE FROM user WHERE id = '$id'");
+    if (filter_var($id, FILTER_VALIDATE_INT)) {
+        $delete = $conn->prepare("DELETE FROM user WHERE id = :id");
+        $delete->bindParam(':id', $id, PDO::PARAM_INT);
 
-    if (!$delete) {
-        die("Cannot delete data from the database!");
+        if ($delete->execute()) {
+            echo "<script>alert('Contact $id a été supprimé avec succès.'); window.location.href = 'contact.php';</script>";
+        } else {
+            echo "<script>alert('Erreur lors de la suppression du contact.'); window.location.href = 'contact.php';</script>";
+        }
     } else {
-        echo "Contact $id has been deleted";
+        echo "<script>alert('L\'ID fourni n\'est pas valide.'); window.location.href = 'contact.php';</script>";
     }
 } else {
-    echo "No ID provided for deletion.";
+    echo "<script>alert('Aucun ID fourni pour la suppression.'); window.location.href = 'contact.php';</script>";
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: contact.php');
     exit;
 }
+
