@@ -17,4 +17,4 @@ Ce projet est une application web simple utilisant PHP, MySQL et Tailwind CSS po
 
 3. **Configurer la connexion à la base de données :**
 
-   Renommez le fichier `connect.default.php` en `connect.php` et modifiez-le pour y insérer les informations nécessaires à la connexion à votre base de données MySQL.
+   Créer un nouveau fichier `connect.php` et mettez y le contenu de `connect.default.php` et modifier les informations nécessaire pour la connexion à la baase de données MySQL
