@@ -10,10 +10,11 @@ require_once('data.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP PHP</title>
 </head>
+
 <body>
-   <h1 class="text-2xl text-center">Formulaire</h1>
+    <?php require_once("./header.php") ?>
    
-   <div class="w-full max-w-xs">
+   <div class="w-full max-w-xs mx-auto">
       <form method="POST" action="data.php" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -41,19 +42,7 @@ require_once('data.php');
       </form>
    </div>
 
-   <h2 class="text-xl text-center">Liste des Contacts</h2>
-   <table class="min-w-full table-auto border-collapse border border-gray-300">
-      <thead>
-        <tr>
-          <th class="px-4 py-2 border">Nom</th>
-          <th class="px-4 py-2 border">Téléphone</th>
-          <th class="px-4 py-2 border">Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php afficherContact(); ?>
-      </tbody>
-   </table>
+  
 </body>
 <?php require_once("./footer.php")?>
 </html>
