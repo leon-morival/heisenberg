@@ -55,4 +55,5 @@ require_once('data.php');
       </tbody>
    </table>
 </body>
+<?php require_once("./footer.php")?>
 </html>

@@ -18,9 +18,9 @@ function afficherContact() {
     if (isset($_SESSION['contacts']) && !empty($_SESSION['contacts'])) {
         foreach ($_SESSION['contacts'] as $contact) {
             echo "<tr>";
-            echo "<td class='px-4 py-2 border'>" . htmlspecialchars($contact['name']) . "</td>";
-            echo "<td class='px-4 py-2 border'>" . htmlspecialchars($contact['telephone']) . "</td>";
-            echo "<td class='px-4 py-2 border'>" . htmlspecialchars($contact['email']) . "</td>";
+            echo "<td class='px-4 py-2 border'>" . $contact['name']. "</td>";
+            echo "<td class='px-4 py-2 border'>" . $contact['telephone'] . "</td>";
+            echo "<td class='px-4 py-2 border'>" . $contact['email'] . "</td>";
             echo "</tr>";
         }
     } else {
