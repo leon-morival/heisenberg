@@ -2,21 +2,33 @@
 
 ## Description
 
-Ce projet est une application web simple utilisant PHP, MySQL et Tailwind CSS pour gérer des contacts. Les utilisateurs peuvent ajouter, afficher et supprimer des contacts.
+Ce projet est une application web simple utilisant PHP, MySQL et Tailwind CSS pour gérer des contacts. Les utilisateurs peuvent ajouter, afficher, modifier et supprimer des contacts.
+
+## Prérequis
+
+Avant de commencer, vous devez avoir les outils suivants installés sur votre machine :
+
+- [PHP](https://www.php.net/downloads.php)
+- [MySQL](https://dev.mysql.com/downloads/)
+- [Node.js](https://nodejs.org/en/download/) (pour Tailwind CSS)
 
 ## Installation
 
-1. Clonez le dépôt sur votre machine locale :
+### Étapes d'installation
 
-2. Installez les dépendances npm pour Tailwind CSS :
+1. Clonez le projet
 
-   ```bash
-   npm install
-   npm run build:css
-   ```
+2. Installez les dépendances npm
 
-3. **Configurer la bsdvConnexion à la base de données :**
+```bash
+npm install
+npm run build:css
+```
 
-   Créer un nouveau fichier `db.php` et mettez y le contenu de `db.default.php` et modifier les informations nécessaire pour la bsdvConnexion à la baase de données MySQL
+3. Configurez la connexion à la base de données MySQL :
 
-# heisenberg_pres
+```bash
+cp db.default.php db.php
+```
+
+Modifier les informations de connexions nécessaires à la connection
