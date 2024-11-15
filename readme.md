@@ -32,3 +32,10 @@ cp db.default.php db.php
 ```
 
 Modifier les informations de connexions nécessaires à la connection
+
+# Captures d'écran
+
+![Ajout d'un contact](screenshots\add_contact.png)
+![Liste des contacts](screenshot\contacts.png)
+![Modification d'un contact](screenshots\edit_contact.png)
+![Confirmation de suppression](screenshots\confirm_delete.png)
