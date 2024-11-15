@@ -1,15 +1,15 @@
 <?php
-require_once("./includes/connect.php");
+require_once("./includes/db.php");
 
 if (isset($_POST['id'])) {
-    $id = trim($_POST['id']);
+    $bsdvId = trim($_POST['id']);
 
-    if (filter_var($id, FILTER_VALIDATE_INT)) {
-        $delete = $conn->prepare("DELETE FROM user WHERE id = :id");
-        $delete->bindParam(':id', $id, PDO::PARAM_INT);
+    if (filter_var($bsdvId, FILTER_VALIDATE_INT)) {
+        $bsdvDelete = $bsdvConn->prepare("DELETE FROM user WHERE id = :id");
+        $bsdvDelete->bindParam(':id', $bsdvId, PDO::PARAM_INT);
 
-        if ($delete->execute()) {
-            echo "<script>alert('Contact $id a été supprimé avec succès.'); window.location.href = 'contact.php';</script>";
+        if ($bsdvDelete->execute()) {
+            echo "<script>alert('Contact $bsdvId a été supprimé avec succès.'); window.location.href = 'contact.php';</script>";
         } else {
             echo "<script>alert('Erreur lors de la suppression du contact.'); window.location.href = 'contact.php';</script>";
         }

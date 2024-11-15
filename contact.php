@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <?php require_once("./data.php") ?>
+    <?php require_once("./add_contact.php") ?>
     <?php require_once("./includes/header.php") ?>
-    <?php require_once("./includes/connect.php") ?>
+    <?php require_once("./includes/db.php") ?>
 
    <table class="mx-auto    border-gray-300 ">
    <caption class="caption-top">Liste des contacts</caption>  
@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <?php afficherContact($conn); ?>
+        <?php afficherContact($bsdvConn); ?>
       </tbody>
    </table>
 </body>

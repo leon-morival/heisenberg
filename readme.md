@@ -15,6 +15,8 @@ Ce projet est une application web simple utilisant PHP, MySQL et Tailwind CSS po
    npm run build:css
    ```
 
-3. **Configurer la connexion à la base de données :**
+3. **Configurer la bsdvConnexion à la base de données :**
 
-   Créer un nouveau fichier `connect.php` et mettez y le contenu de `connect.default.php` et modifier les informations nécessaire pour la connexion à la baase de données MySQL
+   Créer un nouveau fichier `db.php` et mettez y le contenu de `db.default.php` et modifier les informations nécessaire pour la bsdvConnexion à la baase de données MySQL
+
+# heisenberg_pres
