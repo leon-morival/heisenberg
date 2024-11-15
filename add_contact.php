@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bsdvName = htmlspecialchars($bsdvName, ENT_QUOTES, );
         $bsdvTelephone = htmlspecialchars($bsdvTelephone, ENT_QUOTES, );
         $bsdvEmail = filter_var($bsdvEmail, FILTER_SANITIZE_EMAIL);
-        $bsdvStmt = $bsdvConn->prepare("INSERT INTO `user` (`name`, `email`, `telephone`) VALUES (:name, :email, :telephone)");
+        $bsdvStmt = $bsdvConn->prepare("INSERT INTO `contacts` (`name`, `email`, `telephone`) VALUES (:name, :email, :telephone)");
         $bsdvStmt->bindParam(':name', $bsdvName);
         $bsdvStmt->bindParam(':telephone', $bsdvTelephone);
         $bsdvStmt->bindParam(':email', $bsdvEmail);
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 function afficherContact($bsdvConn) {
-    $bsdvData = $bsdvConn->query("SELECT * FROM user");
+    $bsdvData = $bsdvConn->query("SELECT * FROM contacts");
     if ($bsdvData) {
         foreach ($bsdvData as $bsdvRow) {
             echo "<tr>";

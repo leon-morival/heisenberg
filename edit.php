@@ -8,7 +8,7 @@ if (!$bsdvId) {
     exit;
 }
 
-$bsdvStmt = $bsdvConn->prepare("SELECT * FROM user WHERE id = :id");
+$bsdvStmt = $bsdvConn->prepare("SELECT * FROM contacts WHERE id = :id");
 $bsdvStmt->bindParam(':id', $bsdvId);
 $bsdvStmt->execute();
 $bsdvContact = $bsdvStmt->fetch();
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bsdvTelephone = htmlspecialchars($bsdvTelephone, ENT_QUOTES);
         $bsdvEmail = filter_var($bsdvEmail, FILTER_SANITIZE_EMAIL);
 
-        $bsdvUpdateStmt = $bsdvConn->prepare("UPDATE user SET name = :name, telephone = :telephone, email = :email WHERE id = :id");
+        $bsdvUpdateStmt = $bsdvConn->prepare("UPDATE contacts SET name = :name, telephone = :telephone, email = :email WHERE id = :id");
         $bsdvUpdateStmt->bindParam(':name', $bsdvName);
         $bsdvUpdateStmt->bindParam(':telephone', $bsdvTelephone);
         $bsdvUpdateStmt->bindParam(':email', $bsdvEmail);

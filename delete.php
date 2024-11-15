@@ -5,7 +5,7 @@ if (isset($_POST['id'])) {
     $bsdvId = trim($_POST['id']);
 
     if (filter_var($bsdvId, FILTER_VALIDATE_INT)) {
-        $bsdvDelete = $bsdvConn->prepare("DELETE FROM user WHERE id = :id");
+        $bsdvDelete = $bsdvConn->prepare("DELETE FROM contacts WHERE id = :id");
         $bsdvDelete->bindParam(':id', $bsdvId, PDO::PARAM_INT);
 
         if ($bsdvDelete->execute()) {
