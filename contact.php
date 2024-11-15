@@ -11,9 +11,9 @@
     <?php require_once("./add_contact.php") ?>
     <?php require_once("./includes/header.php") ?>
     <?php require_once("./includes/db.php") ?>
-
+<h1 class="text-center text-2xl font-semibold mt-4">Liste des contacts</h1>
    <table class="mx-auto    border-gray-300 ">
-   <caption class="caption-top">Liste des contacts</caption>  
+
    <thead>
         <tr class="bg-gray-100">
           <th class="px-4 py-2 border">Nom</th>
