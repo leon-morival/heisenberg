@@ -27,20 +27,30 @@ function afficherContact($bsdvConn) {
             echo "<td class='px-4 py-2 border'>{$bsdvRow['name']}</td>";
             echo "<td class='px-4 py-2 border'>{$bsdvRow['telephone']}</td>";
             echo "<td class='px-4 py-2 border'>{$bsdvRow['email']}</td>";
-            echo "<td class='px-4 py-2 border text-center'>";
+            echo "<td class='px-4 py-2 border flex justify-evenly'>";
+            // Delete
             echo "<form action='delete.php' method='POST' style='display:inline;'>";
             echo "<input type='hidden' name='id' value='{$bsdvRow['id']}'>";
             echo "<button type='submit' title='Supprimer' onclick='return confirm(\"Voulez-vous vraiment supprimer ce contact ?\");' style='color:#C9112A;'>";
             echo "<i class='fas fa-trash-alt'></i>";
             echo "</button>";
+            // Edit
             echo "</form>";
+            echo "<form action='edit.php' method='GET' style='display:inline;'>";
+            echo "<input type='hidden' name='id' value='{$bsdvRow['id']}'>";
+            echo "<button type='submit' title='Modifier' style='color:#1572A1;'>";
+            echo "<i class='fas fa-edit'></i>";
+            echo "</button>";
+            echo "</form>";
+
             echo "</td>";
             echo "</tr>";
         }
     } else {
-        echo "<tr><td colspan='3' class='px-4 py-2 border text-center'>Aucun contact ajouté.</td></tr>";
+        echo "<tr><td colspan='4' class='px-4 py-2 border text-center'>Aucun contact ajouté.</td></tr>";
     }
 }
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: index.php');
